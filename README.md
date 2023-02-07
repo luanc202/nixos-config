@@ -13,3 +13,7 @@ reboot
 $ sudo rm -r /etc/nixos/configuration.nix
 # move build to desired location
 ```
+
+# Where did I get most of these configs from?
+- [MatthiasBenaets's Nix config](https://github.com/MatthiasBenaets/nixos-config)
+- [ChrisTitusTech's hyprland](https://github.com/ChrisTitusTech/hyprland-titus)

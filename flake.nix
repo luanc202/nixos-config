@@ -1,59 +1,67 @@
-# this is the beginning of my humble nix flake config
-# I'm new into this so improvements are welcome!
-# I will try to keep the README useful and up to date
-# this is a very WIP so do not expect much
 #
-# flake.nix *             
+#  flake.nix *             
 #   ├─ ./hosts
 #   │   └─ default.nix
+#   └─ ./nix
+#       └─ default.nix
+#
 
 {
-  description = "A very basic flake";
+  description = "My Personal NixOS Flake Configuration";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+  inputs =                                                                  # All flake references used to build my NixOS setup. These are dependencies.
+    {
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";                  # Nix Packages
 
-  outputs = { self, nixpkgs}:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        luan = {
-          inherit system;
-          modules = [
-            ./configuration.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.luan = {
-                imports = [ ./home.nix ];
-              };
-            };
-          ];
-        };
+      home-manager = {                                                      # User Package Management
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
       };
-      hmConfig = {
-        luan = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "luan";
-          homeDirectory = "/home/luan";
-          stateVersion = "22.11";
-          configuration = [
-            imports = [
-              ./home.nix
-            ];
-          ];
-        };
+
+      nur = {
+        url = "github:nix-community/NUR";                                   # NUR Packages
+      };
+
+      nixgl = {                                                             # OpenGL
+        url = "github:guibou/nixGL";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+      emacs-overlay = {                                                     # Emacs Overlays
+        url = "github:nix-community/emacs-overlay";
+        flake = false;
+      };
+
+      doom-emacs = {                                                        # Nix-community Doom Emacs
+         url = "github:nix-community/nix-doom-emacs";
+         inputs.nixpkgs.follows = "nixpkgs";
+         inputs.emacs-overlay.follows = "emacs-overlay";
+      };
+
+      hyprland = {                                                          # Official Hyprland flake
+        url = "github:vaxerski/Hyprland";
+        inputs.nixpkgs.follows = "nixpkgs";
       };
     };
-};
+
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixgl, doom-emacs, hyprland, ... }:   # Function that tells my flake which to use and what do what to do with the dependencies.
+    let                                                                     # Variables that can be used in the config files.
+      user = "luan";
+      location = "$HOME/.setup";
+    in                                                                      # Use above variables in ...
+    {
+      nixosConfigurations = (                                               # NixOS configurations
+        import ./hosts {                                                    # Imports ./hosts/default.nix
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager nur user location doom-emacs hyprland;   # Also inherit home-manager so it does not need to be defined here.
+        }
+      );
+
+      homeConfigurations = (                                                # Non-NixOS configurations
+        import ./nix {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager nixgl user;
+        }
+      );
+    };
+}

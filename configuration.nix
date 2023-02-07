@@ -13,8 +13,8 @@ in
 
   # Boot config
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;       # Get latest kernel
-    initrd.kernelModules = ["amdgpu"];                # More on this later on (setting it for xserver)
+    # kernelPackages = pkgs.linuxPackages_latest;       # Get latest kernel
+    # initrd.kernelModules = ["amdgpu"];                # More on this later on (setting it for xserver)
     loader = {
       timeout = 2;  
       grub = {
@@ -70,7 +70,7 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
