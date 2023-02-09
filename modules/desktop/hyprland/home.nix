@@ -119,7 +119,7 @@ let
     bindm=SUPER,mouse:272,movewindow
     bindm=SUPER,mouse:273,resizewindow
 
-    bind=SUPER,Return,exec,${pkgs.alacritty}/bin/alacritty
+    bind=SUPER,Return,exec,${pkgs.konsole}/bin/konsole
     bind=SUPER,Q,killactive,
     bind=SUPER,Escape,exit,
     bind=SUPER,L,exec,${pkgs.swaylock}/bin/swaylock
@@ -130,7 +130,6 @@ let
     bind=SUPER,F,fullscreen,
     bind=SUPER,R,forcerendererreload
     bind=SUPERSHIFT,R,exec,${pkgs.hyprland}/bin/hyprctl reload
-    bind=SUPER,T,exec,${pkgs.emacs}/bin/emacsclient -c
 
     bind=SUPER,left,movefocus,l
     bind=SUPER,right,movefocus,r

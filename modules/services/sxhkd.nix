@@ -11,7 +11,7 @@
         enable = true;
         keybindings = {
           # Apps
-          "super + Return" = "alacritty";                       # Open Terminal
+          "super + Return" = "konsole";                       # Open Terminal
           "super + space" = "rofi -show drun";                  # Open Rofi (custom theme " -theme theme.rasi")
           "super + e" = "pcmanfm";                              # File Manager
 

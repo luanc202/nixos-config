@@ -34,10 +34,9 @@
       # Apps
       appimage-run      # Runs AppImages on NixOS
       firefox           # Browser
-      brave             # Browser
+      # brave             # Browser
 
       # File Management
-      libsForQt5.dolphin # Dolphin File Manager
       gnome.file-roller # Archive Manager
       okular            # PDF Viewer
       unzip             # Zip Files
@@ -56,9 +55,7 @@
       #zsh              # Shell
       #
       # General home-manager
-      #alacritty        # Terminal Emulator
       #dunst            # Notifications
-      #doom emacs       # Text Editor
       #libnotify        # Dependency for Dunst
       #neovim           # Text Editor
       #rofi             # Menu

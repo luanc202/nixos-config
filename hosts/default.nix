@@ -11,7 +11,7 @@
 #            └─ ./home.nix 
 #
 
-{ lib, inputs, nixpkgs, home-manager, user, location, doom-emacs, hyprland, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, location, hyprland, ... }:
 
 let
   system = "x86_64-linux";                                  # System architecture
@@ -43,7 +43,7 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {
-          inherit user doom-emacs;
+          inherit user;
           host = {
             hostName = "desktop";     #For Xorg iGPU  | Videocard 
             mainMonitor = "DP-1"; #DP1            | DisplayPort-1
@@ -52,37 +52,6 @@ in
         };                                                  # Pass flake variable
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
-        };
-      }
-    ];
-  };
-
-  laptop = lib.nixosSystem {                                # Laptop profile
-    inherit system;
-    specialArgs = {
-      inherit inputs user location;
-      host = {
-        hostName = "laptop";
-        mainMonitor = "eDP-1";
-      };
-    };
-    modules = [
-      hyprland.nixosModules.default
-      ./laptop
-      ./configuration.nix
-
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {
-          inherit user;
-          host = {
-            hostName = "laptop";
-            mainMonitor = "eDP-1";
-          };
-        };
-        home-manager.users.${user} = {
-          imports = [(import ./home.nix)] ++ [(import ./laptop/home.nix)];
         };
       }
     ];
@@ -98,6 +67,7 @@ in
       };
     };
     modules = [
+      hyprland.nixosModules.default
       ./vm
       ./configuration.nix
 

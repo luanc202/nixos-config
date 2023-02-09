@@ -10,9 +10,7 @@
   #hardware.new-lg4ff.enable = true;            # Force Feedback Packaged myself :)
 
   environment.systemPackages = [
-    pkgs.lutris                                 # Game Launcher
-    pkgs.heroic
-    pkgs.prismlauncher
+    pkgs.lutris
   ];
 
   programs = {                                  # Needed to succesfully start Steam

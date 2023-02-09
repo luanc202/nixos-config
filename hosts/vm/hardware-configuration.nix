@@ -15,16 +15,24 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
   boot.initrd.availableKernelModules = [ "ata_piix" "xhci_pci" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "zstd" "btrfs" ];
   boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" ];
+    };
+
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-label/boot";
+      fsType = "vfat";
     };
 
   swapDevices = [ ];

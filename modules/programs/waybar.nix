@@ -217,7 +217,7 @@
             format-disconnected = "<span font='11'>睊</span> Not connected";
             #format-alt = "{ifname}: {ipaddr}/{cidr}";
             tooltip-format = "{essid} {ipaddr}/{cidr}";
-            #on-click-right = "${pkgs.alacritty}/bin/alacritty -e nmtui";
+            #on-click-right = "${pkgs.konsole}/bin/konsole -e nmtui";
           };
           pulseaudio = {
             format = "<span font='11'>{icon}</span> {volume}% {format_source} ";

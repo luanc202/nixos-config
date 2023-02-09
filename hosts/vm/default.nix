@@ -12,34 +12,36 @@
 #               └─ bspwm.nix
 #
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, user, ... }:
 
 {
-  imports =  [                                  # For now, if applying to other system, swap files
-    ./hardware-configuration.nix                # Current system hardware config @ /etc/nixos/hardware-configuration.nix
-    ../../modules/desktop/hyprland/default.nix     # Window Manager
-  ];
+  imports =                                   # For now, if applying to other system, swap files
+    [(import ./hardware-configuration.nix)] ++                # Current system hardware config @ /etc/nixos/hardware-configuration.nix
+    [(import ../../modules/desktop/sway/default.nix)];     # Window Manager
+
 
   boot = {                                      # Boot options
     kernelPackages = pkgs.linuxPackages_latest;
+    # initrd.kernelModules = [ "amdgpu" ];       # Video drivers
 
-    loader = {                                  # For legacy boot
+    loader = {
+      timeout = 2;  
       grub = {
+        # grub config
         enable = true;
         version = 2;
-        device = "/dev/sda";                    # Name of hard drive (can also be vda)
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true; # enable if you have other OS installed
       };
-      timeout = 1;                              # Grub auto select timeout
-    };
-  };
-
-  services = {
-    xserver = {                                 
-      resolutions = [
-        { x = 1920; y = 1080; }
-        { x = 1600; y = 900; }
-        { x = 3840; y = 2160; }
-      ];
+      # efi config
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi"; # if you have a separate /boot partition
+      };
+      # systemd-boot = { # Disabled because using GRUB
+      #   enable = true;
+      # };
     };
   };
 }

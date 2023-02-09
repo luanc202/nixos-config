@@ -23,50 +23,18 @@
   boot.kernelModules = [ "kvm-amd"];
   boot.extraModulePackages = with config.boot.kernelPackages; [ ];
 
-  fileSystems."/" = {
-      device = "/dev/disk/by-uuid/1fd1ba2f-4552-407e-997f-3b9548564077";
+    fileSystems."/" =
+    { device = "/dev/disk/by-label/root";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=root" "autodefrag" "noatime" ];
+      options = [ "subvol=root" "compress=zstd" ];
     };
 
-  fileSystems."/home" = { 
-    device = "/dev/disk/by-uuid/1fd1ba2f-4552-407e-997f-3b9548564077";
-    fsType = "btrfs";
-    options = [ "subvol=home" ];
-  };
-
-  fileSystems."/nix" = { 
-    device = "/dev/disk/by-uuid/1fd1ba2f-4552-407e-997f-3b9548564077";
-    fsType = "btrfs";
-    options = [ "subvol=nix" ];
-  };
-
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-label/boot";
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/3D2E-9C91";
       fsType = "vfat";
     };
 
-  fileSystems."/mnt/hdd" =
-    { #device = "/dev/disk/by-uuid/7491ea96-a62d-4202-ada7-8d0310dfc967";
-      device = "/dev/disk/by-label/hdd";
-      fsType = "ntfs";
-      options = [ "nofail" ];
-    };
-
-  fileSystems."/mnt/KD512" =
-    {
-      device = "/dev/disk/by-label/KD512";
-      fsType = "ntfs";
-      options = [ "nofail" ];
-    };
-
-  fileSystems."/mnt/nvme2" =
-    {
-      device = "/dev/disk/by-label/nvme2";
-      fsType = "btrfs";
-      options = [ "nofail" ];
-    };
+  swapDevices = [ ];
 
   # swapDevices =
   #  [

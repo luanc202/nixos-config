@@ -16,12 +16,13 @@
 {
   imports =
     [
-      ../../modules/desktop/bspwm/home.nix  #Window Manager
+      ../../modules/desktop/sway/home.nix  #Window Manager
     ];
 
   home = {                                  # Specific packages for desktop
     packages = with pkgs; [
       firefox
     ];
+
   };
 }

@@ -26,10 +26,9 @@
       jellyfin-ffmpeg
 
       # Dependencies
-      ispell            # Emacs spelling
       
       # Imported in default or from modules
-      discord          # Comms           # See overlay default.nix
+      # discord          # Comms           # See overlay default.nix
       #ffmpeg           # Video Support
       #gphoto2          # Digital Photography
       #steam            # Game Launcher

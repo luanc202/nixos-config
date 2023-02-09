@@ -18,7 +18,7 @@ in
   programs = {
     rofi = {
       enable = true;
-      terminal = "${pkgs.alacritty}/bin/alacritty";           # Alacritty is default terminal emulator
+      terminal = "${pkgs.konsole}/bin/konsole";           # Konsole is default terminal emulator
       location = "center";
       font = "FiraCode Nerd Font Mono 11";
       theme =  with colors.scheme.doom; {

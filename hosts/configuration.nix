@@ -15,7 +15,7 @@
 
 {
   imports =
-    (import ../modules/editors) ++          # Native doom emacs instead of nix-community flake
+    (import ../modules/editors) ++          # Native of nix-community flake
     (import ../modules/shell);
 
   users.users.${user} = {                   # System User
@@ -23,7 +23,8 @@
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" ];
     shell = pkgs.zsh;                       # Default shell
   };
-  security.sudo.wheelNeedsPassword = false; # User does not need to give password when using sudo.
+  
+  boot.initrd.kernelModules = [ "zstd" "btrfs" ];
 
   time.timeZone = "Brazil/Fortaleza";        # Time zone and internationalisation
   i18n = {
@@ -64,7 +65,7 @@
 
   environment = {
     variables = {
-      TERMINAL = "alacritty";
+      TERMINAL = "konsole";
       EDITOR = "nvim";
       VISUAL = "nvim";
     };

@@ -1,7 +1,7 @@
 # APPS
 # Open Terminal
 super + Return
-  alacritty
+  konsole
 
 # Open rofi
 super + @space

@@ -112,6 +112,7 @@ in
     };
   };
 
+  users.mutableUsers = true;
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner"]; # Enable ‘sudo’ for the user.
@@ -120,7 +121,7 @@ in
   home-manager.users.${user} - { pkgs, ... }: {
     home.packages = with pkgs; [
       zsh
-      tmux
+      konsole
       zsh-syntax-highlighting
       zsh-autosuggestions
       zsh-history-substring-search
