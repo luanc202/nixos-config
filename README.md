@@ -20,7 +20,7 @@ $ sudo rm -r /etc/nixos/configuration.nix
 
 ## Install guide
 
-*** UEFI
+### UEFI
 *In these commands*
 - Partition Labels:
   - Boot = "boot"
@@ -38,8 +38,8 @@ $ sudo rm -r /etc/nixos/configuration.nix
   mkfs.fat -F 32 -n boot /dev/vda2
 ```
 
-** Installation
-*** UEFI
+## Installation
+### UEFI
 *In these commands*
 - Mount partition with label ... on ...
   - "root" -> ~/mnt~
@@ -60,7 +60,7 @@ $ sudo rm -r /etc/nixos/configuration.nix
   mount /dev/disk/by-label/boot /mnt/boot/efi
 ```
 
-*** Generate
+### Generate
 *In these commands*
 - Swap is enable:
   - Ignore if no swap or enough RAM
@@ -75,7 +75,7 @@ $ sudo rm -r /etc/nixos/configuration.nix
   cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/nixos-config/hosts/<host>/.
 ```
 
-*** Possible Extra Steps
+### Possible Extra Steps
 1. Switch specific host hardware-configuration.nix with generated ~/mnt/etc/nixos/hardware-configuration.nix~
 2. Change existing network card name with the one in your system
    - Look in generated hardware-configuration.nix
@@ -84,7 +84,7 @@ $ sudo rm -r /etc/nixos/configuration.nix
 4. Set a ~users.users.${user}.initialPassword = ...~
    - Not really recommended. It's maybe better to follow last steps
 
-*** Install
+### Install
 *In these commands*
 - Move into cloned repository
   - in this example ~/mnt/etc/nixos/<name>~
@@ -96,7 +96,7 @@ $ sudo rm -r /etc/nixos/configuration.nix
   nixos-install --flake .#<host>
 ```
 
-** Finalization
+## Finalization
 1. Set a root password after installation is done
 2. Reboot without liveCD
 3. Login
