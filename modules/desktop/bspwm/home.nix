@@ -35,7 +35,7 @@ let
 
     #pgrep -x sxhkd > /dev/null || sxhkd &  # Not needed on NixOS
 
-    feh --bg-tile $HOME/.config/wall        # Wallpaper
+    feh --bg-tile $HOME/.config/wall.jpg        # Wallpaper
 
     killall -q polybar &                    # Reboot polybar to correctly show workspaces
     while pgrep -u $UID -x polybar >/dev/null; do sleep 1;done 
