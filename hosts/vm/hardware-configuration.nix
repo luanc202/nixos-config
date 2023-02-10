@@ -20,7 +20,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "ata_piix" "xhci_pci" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ "zstd" "btrfs" ];
+  boot.initrd.kernelModules = [ "zstd" "btrfs" "amdgpu" ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ ];
 
