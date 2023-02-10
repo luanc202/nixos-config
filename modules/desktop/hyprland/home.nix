@@ -57,7 +57,7 @@ let
     if hostName == "desktop" then ''
       exec-once=${pkgs.mpvpaper}/bin/mpvpaper -sf -v -o "--loop --panscan=1" '*' $HOME/.config/wall.mp4
     '' else if hostName == "work" then ''
-      exec-once=${pkgs.swaybg}/bin/swaybg -m center -i $HOME/.config/wall
+      exec-once=${pkgs.swaybg}/bin/swaybg -m center -i $HOME/.config/wall.jpg
       exec-once=${pkgs.networkmanagerapplet}/bin/nm-applet --indicator
     '' else "";
 in

@@ -72,7 +72,7 @@ tap disabled
 }
 
 output "*" {
-bg ~/.config/wall fill
+bg ~/.config/wall.jpg fill
 scale 1
 }
 
