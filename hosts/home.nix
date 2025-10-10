@@ -11,9 +11,9 @@
 #           └─ default.nix
 #
 
-{ config, lib, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
-{ 
+{
   imports =                                   # Home Manager Modules
     (import ../modules/programs) ++
     (import ../modules/services);
@@ -37,7 +37,7 @@
       # brave             # Browser
 
       # File Management
-      gnome.file-roller # Archive Manager
+      # gnome.file-roller # Archive Manager
       okular            # PDF Viewer
       unzip             # Zip Files
       unrar             # Rar Files
@@ -45,23 +45,18 @@
 
       # General configuration
       #git              # Repositories
-      #killall          # Stop Applications
+      killall          # Stop Applications
       #nano             # Text Editor
-      #pciutils         # Computer Utility Info
+      pciutils         # Computer Utility Info
       #pipewire         # Sound
-      #usbutils         # USB Utility Info
+      usbutils         # USB Utility Info
       #wacomtablet      # Wacom Tablet
-      #wget             # Downloader
+      wget             # Downloader
       #zsh              # Shell
       #
       # General home-manager
-      #dunst            # Notifications
-      #libnotify        # Dependency for Dunst
-      #neovim           # Text Editor
-      #rofi             # Menu
-      #rofi-power-menu  # Power Menu
-      #udiskie          # Auto Mounting
-      #vim              # Text Editor
+      libnotify        # Dependency for Dunst
+      udiskie          # Auto Mounting
       #
       # Xorg configuration
       #xclip            # Console Clipboard
@@ -84,7 +79,7 @@
       #wev              # Input Viewer
       #wl-clipboard     # Console Clipboard
       #wlr-randr        # Screen Settings
-      #xwayland         # X for Wayland
+      xwayland         # X for Wayland
       #
       # Wayland home-manager
       #mpvpaper         # Video Wallpaper
@@ -95,38 +90,18 @@
       #
       # Desktop
       #ansible          # Automation
-      #blueman          # Bluetooth
-      #deluge           # Torrents
-      #discord          # Chat
-      #ffmpeg           # Video Support (dslr)
-      #gmtp             # Mount MTP (GoPro)
-      #gphoto2          # Digital Photography
-      #handbrake        # Encoder
-      #lutris           # Game Launcher
-      #mkvtoolnix       # Matroska Tool
-      #steam            # Games
-      # 
-      # Laptop
-      #cbatticon        # Battery Notifications
-      #blueman          # Bluetooth
-      #light            # Display Brightness
-      #libreoffice      # Office Tools
-      #simple-scan      # Scanning
+      qbittorrent       # Torrents
+      handbrake        # Encoder
       #
-      # Flatpak
-      #obs-studio       # Recording/Live Streaming
     ];
-    file.".config/wall.jpg".source = ../modules/themes/wall.jpg;
-    file.".config/wall.mp4".source = ../modules/themes/wall.mp4;
+    file.".config/wall.jpg".source = ../modules/themes/catalina-night.jpg;
     pointerCursor = {                         # This will set cursor system-wide so applications can not choose their own
       gtk.enable = true;
-      name = "Dracula-cursors";
-      #name = "Catppuccin-Mocha-Dark-Cursors";
-      package = pkgs.dracula-theme;
-      #package = pkgs.catppuccin-cursors.mochaDark;
+      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
       size = 16;
     };
-    stateVersion = "22.11";
+    stateVersion = "25.05";
   };
 
   programs = {
@@ -136,10 +111,8 @@
   gtk = {                                     # Theming
     enable = true;
     theme = {
-      name = "Dracula";
-      #name = "Catppuccin-Dark";
-      package = pkgs.dracula-theme;
-      #package = pkgs.catppuccin-gtk;
+      name = "Catppuccin-Dark";
+      package = pkgs.catppuccin-gtk;
     };
     iconTheme = {
       name = "Papirus-Dark";
