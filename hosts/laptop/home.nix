@@ -21,25 +21,25 @@
 
     console = {
             font = "Lat2-Terminus16";
-            keyMap = "us";                          # or us/azerty/etc
+            keyMap = "br-abnt2";                          # or us/azerty/etc
           };
 
   home = {                                # Specific packages for desktop
     packages = with pkgs; [
+
       # Utilities
+      cbatticon        # Battery Notifications
+      light            # Display Brightness
+      simple-scan      # Scanning
 
       # Dependencies
 
-      # Imported in default or from modules
-      vesktop           # Comms           # See overlay default.nix
-      ffmpeg           # Video Support
-      #gphoto2          # Digital Photography
 
-      # Packages I used in the past
     ];
   };
 
   services = {                            # Applets
+    blueman.enable = true;
     blueman-applet.enable = true;         # Bluetooth
   };
 }
