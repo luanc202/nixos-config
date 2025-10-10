@@ -18,12 +18,11 @@
 #           └─ default.nix
 #
 
-{ pkgs, lib, user, ... }:
+{ pkgs, ... }:
 
 {
   imports =                                               # For now, if applying to other system, swap files
     [(import ./hardware-configuration.nix)] ++            # Current system hardware config @ /etc/nixos/hardware-configuration.nix
-    # [(import ../../modules/programs/games.nix)] ++        # Gaming
     [(import ../../modules/desktop/hyprland/default.nix)] ++ # Window Manager
     (import ../../modules/desktop/virtualisation) ++      # Virtual Machines & VNC
     (import ../../modules/hardware);                      # Hardware devices
@@ -33,7 +32,7 @@
     # initrd.kernelModules = [ "amdgpu" ];       # Video drivers
 
     loader = {
-      timeout = 2;  
+      timeout = 2;
       grub = {
         # grub config
         enable = true;
@@ -51,14 +50,6 @@
       #   enable = true;
       # };
     };
-  };
-
-  hardware = {
-    
-  };
-
-  services = {
-    blueman.enable = true;                      # Bluetooth
   };
 
 }
