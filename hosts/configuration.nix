@@ -11,7 +11,7 @@
 #           └─ default.nix
 #
 
-{ config, lib, pkgs, inputs, user, ... }:
+{ pkgs, inputs, user, ... }:
 
 {
   imports =
@@ -21,9 +21,8 @@
   users.users.${user} = {                   # System User
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" ];
-    shell = pkgs.zsh;                       # Default shell
   };
-  
+
   boot.initrd.kernelModules = [ "zstd" "btrfs" ];
 
   time.timeZone = "Brazil/Fortaleza";        # Time zone and internationalisation
@@ -49,18 +48,15 @@
   #  };
   #};
 
-  fonts.fonts = with pkgs; [                # Fonts
+  fonts.packages = with pkgs; [                # Fonts
     carlito                                 # NixOS
     vegur                                   # NixOS
-    source-code-pro
-    jetbrains-mono
+    nerd-fonts.source-code-pro
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.blex-mono
     font-awesome                            # Icons
     corefonts                               # MS
-    (nerdfonts.override {                   # Nerdfont Icons override
-      fonts = [
-        "FiraCode"
-      ];
-    })
+
   ];
 
   environment = {
@@ -134,8 +130,8 @@
   system = {                                # NixOS settings
     autoUpgrade = {                         # Allow auto update (not useful in flakes)
       enable = true;
-      channel = "https://nixos.org/channels/nixos-unstable";
+      channel = "https://nixos.org/channels/nixos-25.05";
     };
-    stateVersion = "22.11";
+    stateVersion = "25.05";
   };
 }
