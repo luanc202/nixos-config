@@ -44,7 +44,7 @@
         [ { device = "/dev/disk/by-uuid/1fbba748-00f6-48aa-b564-040114b4a7dd"; }
         ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   networking = {
