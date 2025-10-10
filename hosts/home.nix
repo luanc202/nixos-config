@@ -93,8 +93,52 @@
       qbittorrent       # Torrents
       handbrake        # Encoder
       #
+
+      wezterm
     ];
+
     file.".config/wall.jpg".source = ../modules/themes/catalina-night.jpg;
+    file.".config/waybar" = {
+      source = ../rsc/config/waybar;
+      recursive = true;
+    };
+    file.".config/dunst" = {
+        source = ../rsc/config/dunst;
+        recursive = true;
+       };
+    file.".config/fish" = {
+        source = ../rsc/config/fish;
+        recursive = true;
+    };
+    file.".config/hypr" = {
+        source = ../rsc/config/hypr;
+        recursive = true;
+    };
+    file.".config/ranger" = {
+         source = ../rsc/config/ranger;
+         recursive = true;
+       };
+    file.".config/rofi" = {
+        source = ../rsc/config/rofi;
+        recursive = true;
+    };
+    file.".config/starship" = {
+        source = ../rsc/config/starship;
+        recursive = true;
+    };
+    file.".config/swaylock" = {
+        source = ../rsc/config/swaylock;
+        recursive = true;
+    };
+    file.".config/wezterm" = {
+        source = ../rsc/config/wezterm;
+        recursive = true;
+    };
+    file.".config/wlogout" = {
+        source = ../rsc/config/wlogout;
+        recursive = true;
+    };
+
     pointerCursor = {                         # This will set cursor system-wide so applications can not choose their own
       gtk.enable = true;
       name = "Catppuccin-Mocha-Dark-Cursors";
