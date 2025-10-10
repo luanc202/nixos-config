@@ -4,14 +4,10 @@
 # Do not forget to enable Steam play for all title in the settings menu
 #
 
-{ config, pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   #hardware.new-lg4ff.enable = true;            # Force Feedback Packaged myself :)
-
-  environment.systemPackages = [
-    pkgs.lutris
-  ];
 
   programs = {                                  # Needed to succesfully start Steam
     steam = {

@@ -2,7 +2,7 @@
 # Bluetooth
 #
 
-{ pkgs, ... }:
+{... }:
 
 {
   hardware.bluetooth = {

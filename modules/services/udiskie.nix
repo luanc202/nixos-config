@@ -2,7 +2,7 @@
 # Mounting tool
 #
 
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   services = {

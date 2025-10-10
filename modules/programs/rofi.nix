@@ -2,7 +2,7 @@
 # System Menu
 #
 
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   inherit (config.lib.formats.rasi) mkLiteral;        # Theme.rasi alternative. Add Theme here

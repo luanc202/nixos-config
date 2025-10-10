@@ -2,7 +2,7 @@
 # Docker
 #
 
-{ config, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
 {
   virtualisation = {

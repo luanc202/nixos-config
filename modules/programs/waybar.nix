@@ -2,7 +2,7 @@
 # Bar
 #
 
-{ config, lib, pkgs, host, ...}:
+{ config, pkgs, host, ...}:
 
 {
   environment.systemPackages = with pkgs; [

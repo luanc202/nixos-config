@@ -1,7 +1,7 @@
 #
 #  Screen color temperature changer
 #
-{ config, lib, pkgs, ...}:
+{ config, lib, ...}:
 
 {
   config = lib.mkIf (config.xsession.enable) {      # Only evaluate code if using X11
@@ -13,5 +13,5 @@
         longitude = -44.209460;
       };
     };
-  }; 
+  };
 }

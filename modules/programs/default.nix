@@ -12,7 +12,7 @@
 
 [
    ./rofi.nix
-   #./waybar.nix
+   ./waybar.nix
    #./games.nix
 ]
 # Waybar.nix is pulled from modules/desktop/..
