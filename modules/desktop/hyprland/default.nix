@@ -55,6 +55,7 @@ in
       swaylock
       wl-clipboard
       wlr-randr
+      wlogout
     ];
   };
 
