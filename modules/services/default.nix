@@ -12,8 +12,6 @@
 
 [
   ./dunst.nix
-  ./flameshot.nix
-  ./sxhkd.nix
   ./udiskie.nix
   ./redshift.nix
 ]
