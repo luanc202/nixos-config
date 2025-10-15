@@ -16,7 +16,7 @@ let
   exec = "exec Hyprland";
 in
 {
-  imports = [ ../../programs/waybar.nix ];
+  imports = [ ../../programs/waybar/default.nix ];
 
   environment = {
     loginShellInit = ''
