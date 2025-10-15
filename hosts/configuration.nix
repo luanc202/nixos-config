@@ -11,7 +11,7 @@
 #           └─ default.nix
 #
 
-{ pkgs, inputs, user, ... }:
+{ pkgs, inputs, lib, user, ... }:
 
 {
   imports =
@@ -37,7 +37,7 @@
 
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "us";                          # or us/azerty/etc
+    keyMap = lib.mkDefault "us";                          # or us/azerty/etc
   };
 
   security.rtkit.enable = true;
