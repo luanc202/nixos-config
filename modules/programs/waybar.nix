@@ -28,7 +28,7 @@
   };
 
   # Manage the custom script file
-  home.file.".config/waybar/script/sink.sh" = {
+  file.".config/waybar/script/sink.sh" = {
     text = ''
       #!/bin/sh
       # ... your script content remains the same ...
