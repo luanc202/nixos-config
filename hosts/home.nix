@@ -38,7 +38,7 @@
 
       # File Management
       # gnome.file-roller # Archive Manager
-      okular            # PDF Viewer
+      kdePackages.okular            # PDF Viewer
       unzip             # Zip Files
       unrar             # Rar Files
       zip               # Zip
