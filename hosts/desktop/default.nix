@@ -33,11 +33,11 @@
     # initrd.kernelModules = [ "amdgpu" ];       # Video drivers
 
     loader = {
-      timeout = 2;  
+      timeout = 2;
       grub = {
         # grub config
         enable = true;
-        version = 2;
+
         device = "nodev";
         efiSupport = true;
         useOSProber = true; # enable if you have other OS installed
@@ -54,7 +54,7 @@
   };
 
   hardware = {
-    
+
   };
 
   services = {

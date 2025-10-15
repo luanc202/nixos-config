@@ -20,7 +20,7 @@ in
       grub = {
         # grub config
         enable = true;
-        version = 2;
+
         device = "nodev";
         efiSupport = true;
         useOSProber = true; # enable if you have other OS installed
