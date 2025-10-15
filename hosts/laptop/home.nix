@@ -19,11 +19,6 @@
       ../../modules/desktop/hyprland/home.nix  # Window Manager
     ];
 
-    console = {
-            font = "Lat2-Terminus16";
-            keyMap = "br-abnt2";                          # or us/azerty/etc
-          };
-
   home = {                                # Specific packages for desktop
     packages = with pkgs; [
 
