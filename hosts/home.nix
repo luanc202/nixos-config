@@ -118,7 +118,7 @@
       '';
       executable = true;
     };
-    file.".config/wall.jpg".source = ../modules/themes/catalina-night.jpg;
+    file.".config/wall.jpg".source = ../modules/themes/wall.jpg;
     file.".config/waybar" = {
       source = ../rsc/config/waybar;
       recursive = true;
