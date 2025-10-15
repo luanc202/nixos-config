@@ -3,9 +3,6 @@
 { programs, pkgs, ... }:
 
 {
-  # Install waybar system-wide so it's available
-  environment.systemPackages = [ pkgs.waybar ];
-
   # Apply the overlay to compile waybar with experimental features
   nixpkgs.overlays = [
     (self: super: {
