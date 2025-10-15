@@ -27,6 +27,9 @@
     (import ../../modules/desktop/virtualisation) ++      # Virtual Machines & VNC
     (import ../../modules/hardware);                      # Hardware devices
 
+    services = {
+      blueman.enable = true;
+    };
 
     console = {
         font = "Lat2-Terminus16";

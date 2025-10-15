@@ -34,7 +34,6 @@
   };
 
   services = {                            # Applets
-    blueman.enable = true;
     blueman-applet.enable = true;         # Bluetooth
   };
 }
