@@ -1,7 +1,7 @@
 
 { config, pkgs, ... }:
 
-let 
+let
   user="luan";
 in
 {
@@ -13,17 +13,17 @@ in
 
   # Boot config
   boot = {
-    # kernelPackages = pkgs.linuxPackages_latest;       # Get latest kernel
+    kernelPackages = pkgs.linuxPackages_latest;       # Get latest kernel
     # initrd.kernelModules = ["amdgpu"];                # More on this later on (setting it for xserver)
     loader = {
-      timeout = 2;  
+      timeout = 2;
       grub = {
         # grub config
         enable = true;
         version = 2;
         device = "nodev";
         efiSupport = true;
-        # useOSProber = true; # enable if you have other OS installed
+        useOSProber = true; # enable if you have other OS installed
       };
       # efi config
       efi = {
@@ -98,7 +98,7 @@ in
       };
     };
   };
-  
+
   # Services
   services = {
     pipewire = {
@@ -120,20 +120,13 @@ in
 
   home-manager.users.${user} - { pkgs, ... }: {
     home.packages = with pkgs; [
-      zsh
       konsole
-      zsh-syntax-highlighting
-      zsh-autosuggestions
-      zsh-history-substring-search
-      zsh-completions
-      zsh-theme-powerlevel10k
-      zsh-z
     ]
   };
 
 system = {
-    channel = "https://nixos.org/channels/nixos-unstable";
-    stateVersion = "22.11";
+    channel = "https://nixos.org/channels/nixos-25.05";
+    stateVersion = "25.05";
     autoUpgrade.enable = true;
   };
 
