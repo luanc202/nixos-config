@@ -119,7 +119,7 @@ let
     bindm=SUPER,mouse:272,movewindow
     bindm=SUPER,mouse:273,resizewindow
 
-    bind=SUPER,Return,exec,${pkgs.konsole}/bin/konsole
+    bind=SUPER,Return,exec,${pkgs.kdePackages.konsole}/bin/konsole
     bind=SUPER,Q,killactive,
     bind=SUPER,Escape,exit,
     bind=SUPER,L,exec,${pkgs.swaylock}/bin/swaylock
