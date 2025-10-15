@@ -118,7 +118,7 @@
       dates = "weekly";
       options = "--delete-older-than 2d";
     };
-    package = pkgs.nixVersions.unstable;    # Enable nixFlakes on system
+    package = pkgs.nixVersions.latest;    # Enable nixFlakes on system
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''
       experimental-features = nix-command flakes
