@@ -62,7 +62,7 @@ let
     '' else "";
 in
 let
-  hyprlandConf = with host; ''
+  hyprlandConf =   ''
     ${monitors}
 
     general {
