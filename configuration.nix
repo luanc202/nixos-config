@@ -119,6 +119,7 @@ in
   };
 
   home-manager.users.${user} - { pkgs, ... }: {
+    home.stateVersion = "24.11";
     home.packages = with pkgs; [
       kdePackages.konsole
     ]
