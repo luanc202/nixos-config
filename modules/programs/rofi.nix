@@ -18,7 +18,7 @@ in
   programs = {
     rofi = {
       enable = true;
-      terminal = "${pkgs.konsole}/bin/konsole";           # Konsole is default terminal emulator
+      terminal = "${pkgs.kdePackages.konsole}/bin/konsole";           # Konsole is default terminal emulator
       location = "center";
       font = "FiraCode Nerd Font Mono 11";
       theme =  with colors.scheme.doom; {
