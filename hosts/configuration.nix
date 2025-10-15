@@ -52,7 +52,7 @@
   fonts.packages = with pkgs; [                # Fonts
     carlito                                 # NixOS
     vegur                                   # NixOS
-    nerd-fonts.source-code-pro
+    nerd-fonts.sauce-code-pro
     nerd-fonts.jetbrains-mono
     nerd-fonts.blex-mono
     font-awesome                            # Icons
