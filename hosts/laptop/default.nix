@@ -27,6 +27,12 @@
     (import ../../modules/desktop/virtualisation) ++      # Virtual Machines & VNC
     (import ../../modules/hardware);                      # Hardware devices
 
+
+    console = {
+        font = "Lat2-Terminus16";
+        keyMap = "br-abnt2";                          # or us/azerty/etc
+    };
+
   boot = {                                      # Boot options
     kernelPackages = pkgs.linuxPackages_latest;
     # initrd.kernelModules = [ "amdgpu" ];       # Video drivers
