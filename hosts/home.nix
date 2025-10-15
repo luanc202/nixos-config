@@ -16,8 +16,7 @@
 {
   imports =                                   # Home Manager Modules
     (import ../modules/programs) ++
-    (import ../modules/services) ++
-    (import ../modules/programs/waybar);
+    (import ../modules/services);
 
   home = {
     username = "${user}";
