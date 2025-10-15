@@ -21,6 +21,7 @@
   users.users.${user} = {                   # System User
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" ];
+    shell = pkgs.fish;
   };
 
   boot.initrd.kernelModules = [ "zstd" "btrfs" ];
