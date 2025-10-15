@@ -1,6 +1,6 @@
 # Waybar config
 
-{ pkgs, ... }:
+{ programs, pkgs, ... }:
 
 {
   # Install waybar system-wide so it's available
@@ -21,10 +21,6 @@
   # Configure the waybar program itself
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = true;
-      target = "sway-session.target";
-    };
   };
 
 }
