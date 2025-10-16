@@ -119,15 +119,14 @@ in
   };
 
   home-manager.users.${user} - { pkgs, ... }: {
-    home.stateVersion = "24.11";
     home.packages = with pkgs; [
       kdePackages.konsole
     ]
   };
 
 system = {
-    channel = "https://nixos.org/channels/nixos-25.05";
-    stateVersion = "25.05";
+    channel = "https://nixos.org/channels/nixos-unstable";
+#    stateVersion = "25.05";
     autoUpgrade.enable = true;
   };
 
