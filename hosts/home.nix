@@ -26,7 +26,7 @@
       # Terminal
       ranger            # File Manager
       tldr              # Helper
-
+      networkmanager
       # Video/Audio
       mpv               # Media Player
       pavucontrol       # Audio Control

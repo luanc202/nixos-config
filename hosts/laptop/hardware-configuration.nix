@@ -1,5 +1,5 @@
 #
-# Hardware settings for my B550M Desktop
+# Hardware settings for my Laptop
 #
 # flake.nix
 #  └─ ./hosts
@@ -54,7 +54,7 @@
     # enableIPv6 = false;
     # interfaces = {
     #   enp2s0 = {                                # Change to correct network driver
-    useDHCP = true;                       # Disabled because fixed ip
+    useDHCP = lib.mkDefault true;                       # Disabled because fixed ip
     #     ipv4.addresses = [ {                    # Ip settings: *.0.50 for main machine
     #       address = "192.168.0.50";
     #       prefixLength = 24;
