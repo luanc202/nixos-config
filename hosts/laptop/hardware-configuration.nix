@@ -50,7 +50,7 @@
   networking = {
     # useDHCP = false;                            # Deprecated
     hostName = "laptop";
-    #networkmanager.enable = true;
+    networkmanager.enable = true;
     # enableIPv6 = false;
     # interfaces = {
     #   enp2s0 = {                                # Change to correct network driver

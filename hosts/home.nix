@@ -27,6 +27,8 @@
       ranger            # File Manager
       tldr              # Helper
       networkmanager
+      starship
+
       # Video/Audio
       mpv               # Media Player
       pavucontrol       # Audio Control
