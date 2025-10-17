@@ -55,6 +55,11 @@
     nerd-fonts.sauce-code-pro
     nerd-fonts.jetbrains-mono
     nerd-fonts.blex-mono
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.iosevka
+    nerd-fonts.hurmit
+    nerd-fonts.fantasque-sans-mono
     font-awesome                            # Icons
     corefonts                               # MS
 
