@@ -193,7 +193,7 @@
     };
     font = {
       #name = "JetBrains Mono Medium";
-      name = "FiraCode Nerd Font Mono Medium";
+      name = "JetBrains Mono Medium";
     };                                        # Cursor is declared under home.pointerCursor
   };
 }
