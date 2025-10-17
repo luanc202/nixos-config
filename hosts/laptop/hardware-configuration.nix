@@ -24,20 +24,32 @@
       boot.kernelModules = [ "kvm-amd" ];
       boot.extraModulePackages = [ ];
 
-      fileSystems."/" =
-        { device = "/dev/disk/by-uuid/ebb032f5-7f11-49af-a476-217d0af8fb49";
-          fsType = "ext4";
-        };
+	fileSystems."/" =
+    { device = "/dev/disk/by-uuid/da83388e-3c26-46a7-8268-ea8d2789e354";
+      fsType = "btrfs";
+      options = [ "subvol=root" ];
+    };
 
-      fileSystems."/run/media/luan/win" =
+	fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/da83388e-3c26-46a7-8268-ea8d2789e354";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
+
+	fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/da83388e-3c26-46a7-8268-ea8d2789e354";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+	fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/5C91-AE10";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+	fileSystems."/run/media/luan/win" =
         { device = "/dev/disk/by-uuid/1C7A3F5A7A3F303E";
           fsType = "ntfs";
-        };
-
-      fileSystems."/boot" =
-        { device = "/dev/disk/by-uuid/5C91-AE10";
-          fsType = "vfat";
-          options = [ "fmask=0077" "dmask=0077" ];
         };
 
       swapDevices =
