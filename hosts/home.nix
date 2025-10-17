@@ -28,6 +28,7 @@
       tldr              # Helper
       networkmanager
       starship
+      pamixer
 
       # Video/Audio
       mpv               # Media Player
@@ -37,6 +38,7 @@
       appimage-run      # Runs AppImages on NixOS
       firefox           # Browser
       # brave             # Browser
+      zed # Text editor
 
       # File Management
       # gnome.file-roller # Archive Manager
@@ -44,7 +46,9 @@
       unzip             # Zip Files
       unrar             # Rar Files
       zip               # Zip
-
+	kdePackages.dolphin
+	eza
+	vim
       # General configuration
       #git              # Repositories
       killall          # Stop Applications
