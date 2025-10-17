@@ -1,1 +1,0 @@
-/nix/store/y6f6ylffmp6bj7ybv4qa0qrnf2xhd0zx-home-manager-files/.config/waybar/script/sink.sh
