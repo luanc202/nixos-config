@@ -51,6 +51,7 @@
 	kdePackages.dolphin
 	eza
 	vim
+	fastfetch
       # General configuration
       #git              # Repositories
       killall          # Stop Applications
