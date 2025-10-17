@@ -11,7 +11,7 @@
 #           └─ default.nix
 #
 
-{ pkgs, inputs, lib, user, ... }:
+{ pkgs, inputs, lib, user, programs, ... }:
 
 {
   imports =
@@ -48,6 +48,10 @@
   #    enable = true;
   #  };
   #};
+
+  programs = {
+    ssh.startAgent = true;
+  };
 
   fonts.packages = with pkgs; [                # Fonts
     carlito                                 # NixOS

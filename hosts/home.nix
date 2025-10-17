@@ -178,7 +178,6 @@
   };
 
   programs = {
-    ssh.startAgent = true;
     home-manager.enable = true;
   };
 
