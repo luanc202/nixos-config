@@ -29,6 +29,7 @@
       networkmanager
       starship
       pamixer
+      bat
 
       # Video/Audio
       mpv               # Media Player
