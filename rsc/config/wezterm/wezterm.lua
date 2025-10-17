@@ -5,11 +5,11 @@ local function font_with_fallback(name, params)
 	return wezterm.font_with_fallback(names, params)
 end
 
-local font_name = "MesloLGS Nerd Font"
+local font_name = "SauceCodePro Nerd Font"
 
 return {
 	-- Telling Wezterm to use zsh
-	default_prog = { '/bin/zsh', '-l' },
+	default_prog = { '/run/current-system/sw/bin/fish', '-l' },
 
 	-- OpenGL for GPU acceleration, Software for CPU
 	front_end = "OpenGL",
