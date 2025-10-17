@@ -39,7 +39,7 @@
       appimage-run      # Runs AppImages on NixOS
       firefox           # Browser
       # brave             # Browser
-      zed # Text editor
+      zed-editor # Text editor
 
       # File Management
       # gnome.file-roller # Archive Manager
