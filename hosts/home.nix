@@ -30,6 +30,7 @@
       starship
       pamixer
       bat
+      light
 
       # Video/Audio
       mpv               # Media Player
