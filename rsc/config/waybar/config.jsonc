@@ -116,8 +116,8 @@
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
+    	"on-scroll-down": "brightnessctl -c backlight set 5%-",
+	"on-scroll-up": "brightnessctl -c backlight set +5%"
     },
     "battery": {
         "format": "{icon}  {capacity}%",
@@ -138,5 +138,5 @@
         "format-wifi": "直 {signalStrength}%",
         "format-ethernet": " wired",
         "format-disconnected": "睊"
-    },
+    }
 }
