@@ -30,7 +30,8 @@
       starship
       pamixer
       bat
-      light
+      brightnessctl
+      vesktop
 
       # Video/Audio
       mpv               # Media Player
