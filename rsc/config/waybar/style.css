@@ -1,7 +1,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono Nerd Font, monospace;
+    font-family:
+        JetBrainsMono Nerd Font,
+        FiraCodeMono Nerd Font;
     font-weight: bold;
     font-size: 15px;
     min-height: 0;
@@ -101,7 +103,7 @@ tooltip {
     color: #f5c2e7;
     border-left: 0px;
     border-right: 0px;
-    border-radius: 10px 0px 0px 10px;;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #window {
