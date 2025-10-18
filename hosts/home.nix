@@ -32,6 +32,7 @@
       bat
       brightnessctl
       vesktop
+      light
 
       # Video/Audio
       mpv               # Media Player
