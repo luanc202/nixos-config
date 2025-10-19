@@ -191,7 +191,7 @@
   gtk = {                                     # Theming
     enable = true;
     theme = {
-      name = "Catppuccin--dark";
+      name = "catppuccin-mocha-blue";
       package = pkgs.catppuccin-gtk;
     };
     iconTheme = {
