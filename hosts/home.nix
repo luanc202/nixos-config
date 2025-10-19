@@ -50,10 +50,14 @@
       unzip             # Zip Files
       unrar             # Rar Files
       zip               # Zip
-	kdePackages.dolphin
-	eza
-	vim
-	fastfetch
+      kdePackages.dolphin
+      eza
+      vim
+      fastfetch
+      nwg-look
+      kdePackages.qt6ct
+      telegram-desktop
+
       # General configuration
       #git              # Repositories
       killall          # Stop Applications
@@ -187,7 +191,7 @@
   gtk = {                                     # Theming
     enable = true;
     theme = {
-      name = "Catppuccin-Dark";
+      name = "Catppuccin--dark";
       package = pkgs.catppuccin-gtk;
     };
     iconTheme = {
@@ -198,5 +202,10 @@
       #name = "JetBrains Mono Medium";
       name = "JetBrains Mono Medium";
     };                                        # Cursor is declared under home.pointerCursor
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
   };
 }
