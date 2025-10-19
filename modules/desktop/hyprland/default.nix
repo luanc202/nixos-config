@@ -56,6 +56,7 @@ in
       wl-clipboard
       wlr-randr
       wlogout
+      hyprlock
     ];
   };
 
