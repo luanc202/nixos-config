@@ -47,7 +47,7 @@
   },
   "cpu": {
     "interval": 10,
-    "format": " {}%",
+    "format": " {}%",
     "on-click": "",
     "max-lenght": 10,
   },
@@ -107,10 +107,10 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down",
     },
-    "format": "  {:%a %d %b  %I:%M %p}", //12 hour format
-    // "format": " {:%d %m %Y  %H:%M}",	//24 hour format
+    // "format": "  {:%a %d %b  %I:%M %p}", //12 hour format
+    "format": " {:%d %m %Y  %H:%M}", //24 hour format
     "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
-    // //"timezones": [ "Kolkata" ],
+    "timezones": ["Fortaleza"],
     // //"max-length": 200
     "interval": 1,
   },
@@ -134,8 +134,8 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 1",
     "on-scroll-down": "pamixer --default-source -d 1",
@@ -145,7 +145,7 @@
     "format": "{icon}",
     "format-alt": "{percent}% {icon}",
     "format-alt-click": "click-right",
-    "format-icons": ["", ""],
+    "format-icons": ["", "󰃞"],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
   },
@@ -165,8 +165,8 @@
     "format": "",
   },
   "network": {
-    "format-wifi": "直 {signalStrength}%",
+    "format-wifi": " {signalStrength}%",
     "format-ethernet": " wired",
-    "format-disconnected": "睊",
+    "format-disconnected": "󰤮",
   },
 }
